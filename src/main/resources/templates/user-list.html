@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container">
+    <br>
+    <h3>User list:</h3>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>User_ssoid</th>
+            <th>Form_id</th>
+            <th>Time</th>
+        </tr>
+        </thead>
+
+        <tr class="responsive-row" th:each="user : ${userList}">
+            <td th:text="${user.getSsoID()}"/>
+            <td th:text="${user.getFormID()}"/>
+            <td th:text="${user.getDate()}"/>
+        </tr>
+
+    </table>
+
+    <a class="btn btn-outline-primary" th:href="@{/}" role="button">Back</a>
+</div>
+
+</body>
+</html>

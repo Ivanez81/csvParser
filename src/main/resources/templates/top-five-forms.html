@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Top 5 forms</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container">
+    <br>
+    <h3>Top 5 forms:</h3>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Form_id</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tr class="responsive-row" th:each="form : ${topFormsList}">
+            <td th:text="${form.getFormID()}"/>
+            <td th:text="${form.getCountFormID()}"/>
+        </tr>
+    </table>
+
+    <a class="btn btn-outline-primary" th:href="@{/}" role="button">Back</a>
+</div>
+
+</body>
+</html>
